@@ -1,4 +1,4 @@
-## Module 1: Introduction
+## Module 0: Introduction
 This module covers the course objective of helping learners navigate the AI development tools on Google Cloud. It also provides an overview of the course structure, which is based on a three-layer AI framework including AI foundations, development, and solutions.
 Learning Objectives
 * Define the course objectives.
@@ -8,7 +8,7 @@ Learning Objectives
 
 This course, "Introduction to AI and Machine Learning on Google Cloud," provides a comprehensive overview of AI technologies and <u>tools offered by Google</u>. The course is organized into different layers, starting with the AI foundation layer where you learn about <u>cloud essentials and data tools</u>. Then, you explore different options to build machine learning projects in the AI development layer, including <u>out-of-the-box solutions, low code or no code options, and do-it-yourself</u> approaches. You also learn how to train and serve machine learning models using <u>Vertex AI</u>, Google Cloud's AI development platform. Finally, you are introduced to <u>generative AI</u> and how it empowers AI development and solutions. By the end of the course, you will be able to recognize the data to AI technologies and tools offered by Google Cloud, leverage generative AI capabilities, choose between different options to develop an AI project on Google Cloud, and build machine learning models end-to-end using Vertex AI. To succeed in this course, it is recommended to write down three keywords after each lesson, lab, and module, and apply what you learn to your own work. Let's get started on this exciting learning journey!
 
-## Module 2: AI Foundations
+## Module 1: AI Foundations
 This module begins with a use case demonstrating the AI capabilities. It then focuses on the AI foundations including **cloud infrastructure** like compute and storage. It also explains the primary data and AI development products on Google Cloud. Finally, it demonstrates how to use **BigQuery ML** to build an ML model, which helps transition from data to AI.
 Learning Objectives
 * Recognize the AI/ML framework on Google Cloud.
@@ -16,34 +16,146 @@ Learning Objectives
 * Define the data and ML products on Google Cloud and how they support the data-to-AI lifecycle.
 * Build an ML model with BigQuery ML to bring data to AI.
 ### Introduction 
-### Why AI
-### AI/ML architecture on Google Cloud
-### Google Cloud infrastructure
-### Data and AI products
-### ML model categories
-### BigQuery ML
-### Lab Introduction
-### Lab: Prediction visitor with BigQuery ML
-### Summary
+This module, AI Foundations, is the first module of the course "Introduction to AI and Machine Learning on Google Cloud." In this module, you will learn how AI can help innovate business processes and improve business efficiency. The module covers various topics, including a use case powered by AI technologies like generative AI, why Google is a good platform for AI projects, and an AI ML framework to guide you through the course. You will also explore Google Cloud's infrastructure, compute, and storage, as well as the products that support your journey from data to AI on Google Cloud. Additionally, you will delve into ML model categories, Big Query, and specifically Big Query ML, and even complete a hands-on lab to build your first ML model on Google Cloud with Big Query ML.
 
-## Module 3: AI Development Options
+### Why AI
+This section explores how AI can enhance business efficiency and transform operations using the example of **Coffee on Wheels**, an international company that sells coffee on trucks in various cities. The company faces three main challenges: location selection and route optimization, sales forecast and real-time monitoring, and marketing campaign automation. Coffee on Wheels sought assistance from **Data Beans**, a digital native company, to leverage data and AI technologies to address these challenges. The demo showcases a dashboard that provides overall statistics across cities, weather information, route suggestions, and detailed truck information. The application also allows for real-time monitoring of business performance and the generation of marketing campaigns. The development of this application involves various Google products such as **BigQuery, Gemini, Vertex AI, Looker, and Google APIs**. The course will explore these tools in more depth. Coffee on Wheels gained benefits such as streamlined business processes, modernized customer service, and enhanced employee productivity through the utilization of AI technologies.
+<p style="text-align: center;">
+  <img src="./images/DATA-BEANS.png" width="800" />
+</p>
+
+### AI/ML architecture on Google Cloud
+It covers the AI and ML toolbox provided by Google and explains why **Google is a trusted company for AI**. The course is divided into modules that cover different aspects of AI development. The **first module** focuses on the AI foundations, including essential concepts like compute and storage, as well as data and AI products. The **second module** explores various AI development options, such as pre-built APIs, low or no-code solutions like AutoML, and custom training. The **third module** guides you through the AI development workflow using Vertex AI, an end-to-end AI development platform. It also teaches you how to automate the workflow using the Vertex AI pipelines SDK. The **final module** introduces generative AI, its tools, and how it can enhance AI solutions. Throughout the course, Google's commitment to responsible AI is emphasized, with principles that prioritize ethical considerations, fairness, accountability, safety, and transparency. Whether you're a data scientist, ML engineer, or AI developer, this course provides a comprehensive toolbox for your AI and ML projects on Google Cloud.
+<p style="text-align: center;">
+  <img src="./images/layers.png" width="800" />
+</p>
+
+### Google Cloud infrastructure
+Google Cloud infrastructure is divided into three layers: **networking and security, compute and storage, and data and AI/machine learning products**. The **compute layer** includes services like Compute Engine, Google Kubernetes Engine, App Engine, Cloud Run, and Cloud Run functions. These services provide flexible and scalable compute power for running data and AI jobs. The **storage layer** offers fully managed database and storage services such as Cloud Storage, Cloud Bigtable, Cloud SQL, Cloud Spanner, Firestore, and BigQuery. These services cater to different data types and business needs. Google also introduced the Tensor Processing Unit (**TPU**) in 2016, which is a custom-developed hardware specifically designed to accelerate machine learning workloads. TPUs are faster and more energy-efficient than traditional CPUs and GPUs. Compute and storage are decoupled in Google Cloud, allowing them to scale independently.
+<p style="text-align: center;">
+  <img src="./images/google-compute.png" width="800" />
+  <img src="./images/google-store-opcions.png" width="800" />
+  <img src="./images/google-store.png" width="800" />
+</p>
+
+### Data and AI products
+In this lesson, we explore the primary data and AI products on Google Cloud. These products can be divided into four categories along the data to **AI workflow**: ingestion and process, data storage, analytics, and AI and machine learning. 
+
+1. Ingestion and Process:
+- Pub Sub: Used to digest both real-time and batch data.
+- Data Flow: Helps process and analyze data in real-time.
+- Data PC: A data processing service for building and managing data pipelines.
+- Cloud Data Fusion: Allows you to create, deploy, and manage data integration pipelines.
+
+2. Data Storage:
+- Cloud Storage: Saves unstructured data like text, images, audio, and video.
+- BigQuery: A fully managed data warehouse for analyzing data through SQL commands.
+- Cloud SQL: A fully managed relational database service.
+- Spanner: A globally distributed, horizontally scalable, and strongly consistent relational database service.
+- BigTable: A NoSQL database service for large analytical and operational workloads.
+- Firestore: A NoSQL document database for building web, mobile, and server applications.
+
+3. Analytics:
+- BigQuery: A powerful analytics tool that allows you to analyze data through SQL commands.
+- Looker: A family of business intelligence tools for visualizing, analyzing, modeling, and governing business data.
+
+4. AI and Machine Learning:
+- Vertex AI: A unified platform that includes multiple tools for AI development, such as AutoML for predictive AI, Workbench and Colab Enterprise for coding, and Vertex AI Studio and Model Garden for generative AI.
+- AI Solutions: Built on the ML development platform, these solutions include technologies like document AI, Contact Center AI, Vertex AI Search, and Data Engine.
+
+These products are seamlessly connected on Google Cloud, making it easy for data scientists and AI developers to transition from data to AI. They unlock insights that only large amounts of data can provide and offer generative AI capabilities to enhance their functionality.
+
+<p style="text-align: center;">
+  <img src="./images/ai-products.png" width="800" />
+</p>
+
+### ML model categories
+This course on Introduction to AI and Machine Learning on Google Cloud covers the following key points:
+
+- Artificial intelligence (AI) is a broad term that includes computers mimicking human intelligence, while machine learning (ML) is a subset of AI that allows computers to learn without explicit programming.
+- Supervised learning uses labeled data to train ML models, while unsupervised learning uses unlabeled data to discover patterns.
+- Supervised learning includes classification (predicting categorical variables) and regression (predicting numerical variables).
+- Unsupervised learning includes clustering (grouping similar data points), association (identifying relationships), and dimensionality reduction (reducing the number of features in a dataset).
+- Generative AI relies on training extensive models like large language models.
+- Deep learning and deep neural networks are subsets of ML that add layers to enable deeper learning.
+- ML models such as logistic regression, linear regression, k-means clustering, association rule learning, and principal component analysis are used to solve different ML problems.
+
+By the end of the course, you will have a solid understanding of the different categories of ML models and how they can be applied to real-world scenarios.
+
+<p style="text-align: center;">
+  <img src="./images/ai-ml.png" width="800" />
+  <img src="./images/supervised.png" width="800" />
+  <img src="./images/unsupervised.png" width="800" />
+</p>
+
+### BigQuery ML
+In this lesson, you will explore BigQuery ML and learn how to build ML models using SQL commands. BigQuery is a powerful data analytics tool on Google Cloud that provides both storage and analytical capabilities. With BigQuery ML, you can manage tabular data and execute ML models in one place with just a few steps. **The process of building an ML model with BigQuery ML involves several phases**:
+
+1. Phase 1: Extract, transform, and load data into BigQuery. You can use connectors to easily import data from other Google products or enrich your existing data warehouse with additional data sources using SQL joins.
+
+2. Phase 2: Select and preprocess features. BigQuery ML helps with preprocessing tasks like one hot encoding of categorical variables, which converts categorical data into numeric data required by the training model.
+
+3. Phase 3: **Create the model inside BigQuery**. You can use the "create model" command to specify the model type, such as logistic regression for classification problems. BigQuery ML supports other popular ML models like linear regression, k-means clustering, and time series forecasting.
+
+4. Phase 4: **Evaluate the performance** of the trained model using the "ML evaluate" query. You can specify evaluation metrics like accuracy, precision, and recall to assess the model's performance on an evaluation dataset.
+
+5. Phase 5: Once you are satisfied with the model's performance, you can use it to **make predictions using the "ML predict"** command. This will return predictions and the model's confidence in those predictions.
+
+BigQuery ML also supports ML Ops, which helps with deploying, monitoring, and managing ML models. It is recommended to start with simpler models like logistic regression and linear regression before exploring more complex models like deep neural networks. By using BigQuery ML, you can streamline the ML workflow and save time and resources in building and training ML models.
+<p style="text-align: center;">
+  <img src="./images/ml-models.png" width="800" />
+</p>
+
+
+### Lab: Prediction visitor with BigQuery ML
+
+
+### Summary
+Sure! In the AI Foundations module of the course, you learned about the basics of AI and ML on Google Cloud. Here is a summary of the key topics covered:
+
+1. Introduction to AI Foundations:
+- The module started with the story of "coffee on wheels" to demonstrate how AI enables business processes and transformation.
+- You were introduced to the three layers of the AI and ML toolbox on Google Cloud: AI foundations, AI development, and AI solutions.
+- This module focuses on the AI development layer, which covers both predictive AI and generative AI.
+
+2. Google Cloud Infrastructure:
+- You explored the Google Cloud infrastructure, specifically compute and storage.
+- Google Cloud decouples compute and storage, allowing them to scale independently based on need.
+
+3. Data and AI Products:
+- You learned about the data and AI products offered by Google Cloud.
+- These products enable you to perform tasks such as data ingestion, storage, analytics, and AI/ML.
+
+4. Fundamental ML Concepts:
+- You delved into the fundamental concepts of machine learning (ML).
+- You learned about the categories of ML models, specifically supervised and unsupervised learning.
+- These concepts help you choose the right ML model and follow the steps to build an ML model using BigQuery ML.
+
+5. Hands-on Lab:
+- You had a hands-on lab where you applied the steps to build your own ML model using SQL commands.
+- This practical exercise allowed you to put your knowledge into practice.
+
+That concludes the overview of the AI Foundations module. In the next module, you will advance to AI development and explore different options to build AI and ML projects.
+
+## Module 2: AI Development Options
 This module explores the various options for developing an ML project on Google Cloud, from ready-made solutions like **pre-trained APIs, to no-code and low-code solutions like AutoML, and code-based solutions like custom training**. It compares the advantages and disadvantages of each option to help decide the right development tools.
 Learning Objectives
 * Define different options to build an ML model on Google Cloud.
 * Recognize the primary features and applicable situations of **pre-trained APIs, AutoML, and custom training**.
 * Use the Natural Language API to analyze text.
 
-## Module 4: AI Development Workflow
+## Module 3: AI Development Workflow
 This module walks through the **ML workflow** from data preparation, to model development, and to model serving on Vertex AI. It also illustrates how to convert the workflow into an automated pipeline using Vertex AI Pipelines.
 Learning Objectives
 * Define the workflow of building an ML model.
 * Describe MLOps and workflow automation on Google Cloud.
 * Build an ML model from end to end by using AutoML on Vertex AI.
-## Module 5: Generative AI
+
+## Module 4: Generative AI
 This module introduces generative AI (gen AI), the newest advancement in AI, and the essential toolkits for developing gen AI projects. It starts by examining the gen AI workflow on Google Cloud. It then investigates how to use Gen AI Studio and Model Garden to access Gemini multimodal, design prompt, and tune models. Finally, it explores the built-in gen AI capabilities of AI solutions.
 Learning Objectives
 Define generative AI and foundation models.
 Use Gemini multimodal with Vertex AI Studio.
 Design efficient prompt and tune models with different methods.
 Recognize the AI solutions and the embedded Gen AI features.
-## Module 6: Summary
+## Module 5: Summary
