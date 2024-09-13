@@ -34,7 +34,7 @@ It covers the AI and ML toolbox provided by Google and explains why **Google is 
 Google Cloud infrastructure is divided into three layers: **networking and security, compute and storage, and data and AI/machine learning products**. The **compute layer** includes services like Compute Engine, Google Kubernetes Engine, App Engine, Cloud Run, and Cloud Run functions. These services provide flexible and scalable compute power for running data and AI jobs. The **storage layer** offers fully managed database and storage services such as Cloud Storage, Cloud Bigtable, Cloud SQL, Cloud Spanner, Firestore, and BigQuery. These services cater to different data types and business needs. Google also introduced the Tensor Processing Unit (**TPU**) in 2016, which is a custom-developed hardware specifically designed to accelerate machine learning workloads. TPUs are faster and more energy-efficient than traditional CPUs and GPUs. Compute and storage are decoupled in Google Cloud, allowing them to scale independently.
 <p style="text-align: center;">
   <img src="./images/google-compute.png" width="800" />
-  <img src="./images/google-store-opcions.png" width="800" />
+  <img src="./images/google-store-opcions.png" width="600" />
   <img src="./images/google-store.png" width="800" />
 </p>
 
@@ -108,7 +108,7 @@ BigQuery ML also supports ML Ops, which helps with deploying, monitoring, and ma
 
 
 ### Lab: Prediction visitor with BigQuery ML
-
+Problems with Qwiklabs
 
 ### Summary
 Sure! In the AI Foundations module of the course, you learned about the basics of AI and ML on Google Cloud. Here is a summary of the key topics covered:
@@ -143,6 +143,70 @@ Learning Objectives
 * Define different options to build an ML model on Google Cloud.
 * Recognize the primary features and applicable situations of **pre-trained APIs, AutoML, and custom training**.
 * Use the Natural Language API to analyze text.
+
+### Introduction
+In this section of the course, you will learn about AI development options on Google Cloud. You will explore different approaches to building machine learning models, including pre-made APIs, low-code and no-code options, and custom training. You will also be introduced to Vertex AI, Google's unified platform for building ML models, and AutoML, a tool for automating the ML development process. Finally, you will have a hands-on practice using the natural language API to analyze sentiment in text. Let's get started!
+
+### AI development options
+In this section, we explore the different AI development options offered by Google Cloud. These options include pre-trained APIs, BigQuery ML, AutoML, and custom training. We compare the pros and cons of each option to help you decide which one is best suited for your business needs and ML expertise. Pre-trained APIs are ready-to-use models that address common perceptual tasks such as vision, video, and natural language. BigQuery ML allows you to use SQL queries to build predefined ML models if you already have data in BigQuery. AutoML is a no-code solution that helps you build your own ML models on Vertex AI through a point-and-click interface. Custom training gives you full control over the ML workflow and allows you to train and serve custom models with code. The best option depends on your specific requirements, ML expertise, and budget.
+
+<p style="text-align: center;">
+  <img src="./images/ai-options.png" width="800" />
+</p>
+
+### Pre-trained APIs
+Sure! In this section of the course, we learn about pre-trained APIs and how they can be used in AI development. Here is a summary of the key points:
+
+1. Pre-trained APIs: Pre-trained APIs are services provided by Google Cloud that act as building blocks for AI applications. They save time and effort by providing ready-to-use AI models without the need to train your own models or provide training data.
+
+2. Types of Pre-trained APIs: Google Cloud offers various pre-trained APIs for different purposes:
+   - Speech, text, and language APIs: These APIs can derive insights from text, recognize entities and sentiment, and perform language analysis.
+   - Image and video APIs: These APIs can recognize content in images and videos, and analyze motion and action in videos.
+   - Document and data APIs: These APIs can process documents, extract text, and parse forms.
+   - Conversational AI APIs: These APIs can build conversational interfaces.
+
+Remember, pre-trained APIs are a convenient way to leverage AI capabilities without the need for extensive training data or model development. They can be used to solve various business problems and enhance your applications with AI capabilities.
+<p style="text-align: center;">
+  <img src="./images/APIs.png" width="800" />
+  <img src="./images/generative-ai.png" width="800" />
+</p>
+
+### Vertex AI
+In this lesson, you'll explore Vertex AI, which is the unified platform that supports various technologies and tools on Google Cloud to help you build an ML project from end to end. Google has invested time and resources into developing Data and AI technologies and products, and Vertex AI is their solution to the challenges faced in ML projects. It provides an end-to-end ML pipeline, allowing users to prepare data, create, deploy, and manage models at scale. Vertex AI encompasses both predictive AI and generative AI, offering AutoML for a no-code solution and custom training for more control. The platform is seamless, scalable, sustainable, and speedy, making it easier for data scientists to focus on solving business problems. Additionally, Vertex AI provides tools for generative AI, allowing users to generate content and embed generative AI into their applications.
+
+<p style="text-align: center;">
+  <img src="./images/vertex-ai.png" width="800" />
+</p>
+
+### AutoML
+AutoML is a powerful tool that automates the process of developing and deploying machine learning models. It saves time by automating tasks such as data preprocessing, model selection, and parameter tuning. AutoML is powered by the latest research from Google and consists of four phases: data processing, model search and parameter tuning, model assembly, and prediction preparation. Two key technologies, transfer learning and neural architecture search, support the model search and tuning process. Transfer learning allows models to leverage pre-trained models to achieve high accuracy with less data and computation time. Neural architecture search helps find optimal models by trying different architectures and comparing their performance. AutoML assembles the best models and prepares them for prediction. The best feature of AutoML is that it provides a no-code solution, allowing users to build ML models through a user interface.
+
+<p style="text-align: center;">
+  <img src="./images/automl.png" width="800" />
+</p>
+
+### Custom training
+In this section, we explore the concept of custom training in machine learning. Custom training allows you to create your own machine learning environment and build your own pipeline. You have two options for the environment: a pre-built container or a custom container. A pre-built container is like a furnished kitchen with all the necessary tools, while a custom container is like an empty room where you define the tools you prefer to use.
+
+To code your machine learning model, you can use Vertex AI Workbench, which is a development environment that supports the entire data science workflow. Another option is Colab Enterprise, which provides a familiar coding environment. You can leverage ML libraries like TensorFlow, Scikit-learn, and PyTorch to save time and effort in building your models.
+
+TensorFlow is an end-to-end open platform for machine learning supported by Google. It has multiple abstraction layers, with high-level APIs like Keras that hide the details of machine learning building blocks. TensorFlow can run on different hardware platforms, including CPU, GPU, and TPU.
+
+We also briefly mentioned JAX, a high-performance numerical computation library that offers new possibilities for research and production environments.
+
+<p style="text-align: center;">
+  <img src="./images/TF-layers.png" width="800" />
+</p>
+
+### Lab Introduction
+In this course module, you will learn about using the Natural Language API to analyze texts. You will explore various features of the API, such as identifying entities, analyzing sentiment, analyzing syntax, and classifying text. The API allows you to make requests for different types of analysis and provides JSON responses. You can call the API using tools like curl or programming languages like Python and Java. The responses can be reviewed or parsed for further usage. By completing the lab exercises, you will gain hands-on experience in creating API requests and performing entity extraction, sentiment analysis, and linguistic analysis on text. 
+
+<p style="text-align: center;">
+  <img src="./images/api-analogy.png" width="800" />
+  <img src="./images/lab-mod3.png" width="800" />
+</p>
+
+### Lab: Entity and sentiment analysis with natural language API
 
 ## Module 3: AI Development Workflow
 This module walks through the **ML workflow** from data preparation, to model development, and to model serving on Vertex AI. It also illustrates how to convert the workflow into an automated pipeline using Vertex AI Pipelines.
