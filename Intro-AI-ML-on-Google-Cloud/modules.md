@@ -207,6 +207,80 @@ In this course module, you will learn about using the Natural Language API to an
 </p>
 
 ### Lab: Entity and sentiment analysis with natural language API
+#### Task 1. Create an API key
+```
+export API_KEY=<YOUR_API_KEY>
+```
+#### Task 2. Make an entity analysis request
+```
+{
+  "document":{
+    "type":"PLAIN_TEXT",
+    "content":"Joanne Rowling, who writes under the pen names J. K. Rowling and Robert Galbraith, is a British novelist and screenwriter who wrote the Harry Potter fantasy series."
+  },
+  "encodingType":"UTF8"
+}
+```
+#### Task 3. Call the Natural Language API
+```
+curl "https://language.googleapis.com/v1/documents:analyzeEntities?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json > result.json
+```
+For each entity in the response, you get the entity type, the associated Wikipedia URL if there is one, the salience, and the indices of where this entity appeared in the text. Salience is a number in the [0,1] range that refers to the centrality of the entity to the text as a whole.
+
+#### Task 4. Sentiment analysis with the Natural Language API
+```
+curl "https://language.googleapis.com/v1/documents:analyzeSentiment?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
+  ```
+- score - is a number from -1.0 to 1.0 indicating how positive or negative the statement is.
+- magnitude - is a number ranging from 0 to infinity that represents the weight of sentiment expressed in the statement, regardless of being positive or negative.
+
+#### Task 5. Analyzing entity sentiment
+In addition to providing sentiment details on the entire text document, the Natural Language API can also break down sentiment by the entities in the text. Use this sentence as an example:
+- I liked the sushi but the service was terrible.
+```
+curl "https://language.googleapis.com/v1/documents:analyzeEntitySentiment?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
+```
+You can see that the score returned for "sushi" was a neutral score of 0, whereas "service" got a score of -0.7. Cool! You also may notice that there are two sentiment objects returned for each entity. If either of these terms were mentioned more than once, the API would return a different sentiment score and magnitude for each mention, along with an aggregate sentiment for the entity.
+#### Task 6. Analyzing syntax and parts of speech
+
+
+```
+curl "https://language.googleapis.com/v1/documents:analyzeSyntax?key=${API_KEY}" \
+  -s -X POST -H "Content-Type: application/json" --data-binary @request.json
+  ```
+
+Use syntactic analysis, another of the Natural Language API's methods, to dive deeper into the linguistic details of the text. analyzeSyntax extracts linguistic information, breaking up the given text into a series of sentences and tokens (generally, word boundaries), to provide further analysis on those tokens. For each word in the text, the API tells you the word's part of speech (noun, verb, adjective, etc.) and how it relates to other words in the sentence (Is it the root verb? A modifier?).
+
+#### Task 7. Multilingual natural language processing
+```
+{
+  "document":{
+    "type":"PLAIN_TEXT",
+    "content":"日本のグーグルのオフィスは、東京の六本木ヒルズにあります"
+  }
+}
+```
+
+### Summary
+In the AI Development Options module, you learned about different approaches to AI development. Here's a summary:
+
+- Ready-made Approach: Use pre-trained APIs for tasks like image recognition and sentiment analysis.
+- Low-code and No-code Approach: Utilize Vertex AI and AutoML for automated ML development without coding.
+- Do-it-yourself Approach: Code ML projects using Python, TensorFlow, and Vertex AI workbench.
+- Hands-on practice with the Natural Language API.
+
+Next, you'll explore the AI Development Workflow module.
+
+### Reading
+AI  development  options:
+
+-  [Natural  Language  API  basics](https://cloud.google.com/natural-language/docs/basics)
+-  [AI  APIs  for  Google  Cloud](https://cloud.google.com/ai/apis?hl=en)
+-  [Introduction  to  Ve ex  AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform) 
+- [Tf.keras  documentation](https://www.tensorflow.org/api_docs/python/tf/keras)
 
 ## Module 3: AI Development Workflow
 This module walks through the **ML workflow** from data preparation, to model development, and to model serving on Vertex AI. It also illustrates how to convert the workflow into an automated pipeline using Vertex AI Pipelines.
@@ -214,6 +288,20 @@ Learning Objectives
 * Define the workflow of building an ML model.
 * Describe MLOps and workflow automation on Google Cloud.
 * Build an ML model from end to end by using AutoML on Vertex AI.
+
+### Introduction
+In this section of the course, you will learn about developing an AI project on Google Cloud. The module covers the ML workflow and how to create an automated pipeline. It starts with an overview of the ML workflow, including data preparation, model development, and model serving. You will also learn about machine learning operations (MLOps) and how it takes ML models from development to production. The module includes an example of building a pipeline to automate the training, evaluation, and deployment of an ML model using Vertex AI pipelines. Finally, there is a hands-on lab where you will walk through the three stages of building an ML model with AutoML on Vertex AI.
+
+### ML workflow
+### Data preparation
+### Model development
+### Model serving
+### MLOps and workflow automation
+### Lab introduction
+### How a machine learns
+### Lab Vertex AI: Prediction Loan Risk with AutoML
+### Summary
+### Reading
 
 ## Module 4: Generative AI
 This module introduces generative AI (gen AI), the newest advancement in AI, and the essential toolkits for developing gen AI projects. It starts by examining the gen AI workflow on Google Cloud. It then investigates how to use Gen AI Studio and Model Garden to access Gemini multimodal, design prompt, and tune models. Finally, it explores the built-in gen AI capabilities of AI solutions.
