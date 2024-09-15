@@ -293,12 +293,58 @@ Learning Objectives
 In this section of the course, you will learn about developing an AI project on Google Cloud. The module covers the ML workflow and how to create an automated pipeline. It starts with an overview of the ML workflow, including data preparation, model development, and model serving. You will also learn about machine learning operations (MLOps) and how it takes ML models from development to production. The module includes an example of building a pipeline to automate the training, evaluation, and deployment of an ML model using Vertex AI pipelines. Finally, there is a hands-on lab where you will walk through the three stages of building an ML model with AutoML on Vertex AI.
 
 ### ML workflow
+In this section of the course, we explore the ML workflow and its main stages. The ML workflow is similar to serving food in a restaurant, starting with **data preparation**, followed by **model development**, and ending with **model serving**. Data preparation involves uploading data and performing feature engineering. Model development requires iterative training to train and evaluate the model. Model serving involves deploying and monitoring the model for predictions. The ML workflow is not linear but **iterative**, allowing for adjustments and improvements. There are two options to set up the workflow with Vertex AI: **AutoML**, a no-code solution, and coding with **Vertex AI Workbench or Colab** using Vertex AI Pipelines. AutoML is user-friendly and doesn't require coding skills, while coding the workflow is suitable for experienced ML engineers or data scientists.
+
+<p style="text-align: center;">
+  <img src="./images/automl-vertexai.png" width="800" />
+</p>
+
 ### Data preparation
+Sure! In this section, we learn about the first stage of the ML workflow, which is data preparation. We explore the different types of data that **AutoML supports**, such as **image, tabular, text, and video data**. For each data type, AutoML can solve different types of problems called objectives. For example, with image data, we can train the model to classify images, detect objects, and perform image segmentation. With tabular data, we can solve regression, classification, and forecasting problems. Text data can be used to classify text, extract entities, and conduct sentiment analysis. And finally, video data can be used to recognize video actions, classify videos, and track objects.
+
+We also learn about the concept of **feature engineering**, which is the process of preparing the data for model training. Just like preparing ingredients before cooking a meal, we need to process the data before the model starts training. Features are factors that contribute to the prediction, and feature engineering involves creating and selecting the right features for the model. To help with feature engineering, Vertex AI provides a service called **Vertex AI Feature Store**, which is a centralized repository to manage, serve, and share features. The feature store makes it easy to maintain consistency, save time, and scale the process with low latency.
+
+The benefits of using Vertex AI Feature Store include the ability to share and reuse features, scalability for low latency serving, and an easy-to-use interface. Overall, **AutoML and Vertex AI Feature Store** are powerful tools that can help us solve complex business problems by combining different data types and objectives.
+
+<p style="text-align: center;">
+  <img src="./images/automl-data.png" width="800" />
+</p>
+
 ### Model development
+In the second stage of model development, you train the model and evaluate the results. This involves two steps: **model training and model evaluation**. During model training, you specify the training method, such as AutoML or custom training, and determine the training details, such as the target column and training options. Once the model is trained, you evaluate its performance using metrics like **recall and precision**, which are measured using a confusion matrix. Recall measures how many positive cases were predicted correctly, while precision measures how many predicted positive cases are actually positive. These metrics help you understand the model's performance and make adjustments if needed. Additionally, Vertex AI provides **feature importance**, which shows how each feature contributes to the prediction. This information helps you decide which features to include in the model. Overall, the goal is to develop a model that performs well and accurately predicts the desired outcome.
+
+<p style="text-align: center;">
+  <img src="./images/metrics.png" width="800" />
+  <img src="./images/explainable-ai.png" width="800" />
+</p>
+
 ### Model serving
+In this section of the course, we focus on the third stage of the machine learning workflow, which is model serving. Model serving consists of two steps: **model deployment and model monitoring**. 
+
+**Model deployment** is the process of implementing and making the model ready to serve predictions. There are two primary options for deploying a model: deploying it to an **endpoint** for real-time predictions or requesting a prediction job directly from the model resource for **batch prediction**. The choice depends on whether immediate results with low latency are needed or if no immediate response is required.
+
+**Model monitoring** is crucial to ensure the performance of the deployed model. It involves monitoring the model's predictions and performance to ensure that it is operating efficiently. **Vertex AI Pipelines** is a tool kit that automates and monitors machine learning systems by orchestrating the workflow in a serverless manner. It displays production data and triggers warnings if something goes wrong based on pre-defined thresholds.
+
+Overall, model deployment and model monitoring are the final steps in the machine learning workflow, where the model is implemented and begins making predictions or generating content. These steps ensure that the model is serving its purpose effectively.
+
 ### MLOps and workflow automation
+In this lesson, you learned about MLOps and workflow automation. MLOps combines machine learning development with operations and applies principles from DevOps to machine learning models. The backbone of MLOps on Vertex AI is a toolkit called **Vertex AI Pipelines**, which supports **Kubeflow Pipelines** and **TensorFlow Extended**. An ML pipeline consists of processes that run in different environments, including data preparation, model development, and model serving. Each process can be a pipeline component, which is a self-contained set of code that performs a specific task. You can build custom components or use pre-built components provided by Google. Organizations often implement ML **automation in three phases**: Phase 0, where you manually build an end-to-end workflow; Phase 1, where you automate the workflow by building components; and Phase 2, where you integrate the components to achieve continuous integration, training, and delivery. You can use **templates** provided by Vertex AI to start building your pipeline. Once the pipeline is built, you can compile and run it. The pipeline will constantly check the performance of the model and decide whether it should be deployed or retrained without your intervention.
+
+<p style="text-align: center;">
+  <img src="./images/mlops.png" width="800" />
+  <img src="./images/ml-pipeline.png" width="800" />
+</p>
+    
 ### Lab introduction
+In this section of the course, we will be putting our knowledge into practice with a hands-on lab using AutoML, a no-code tool for building machine learning models. The lab focuses on **predicting loan risk** using a dataset from a financial institution. We will go through the three phases of the machine learning workflow: data preparation, model development, and model serving. Before starting the lab, we will **review the concept of model evaluation, specifically the confusion matrix**. We will also discuss the **precision-recall curve** and the importance of setting an appropriate threshold for your model. Let's get started!
+
+<p style="text-align: center;">
+  <img src="./images/t0.png" width="800" />
+  <img src="./images/t1.png" width="800" />
+</p>
+
 ### How a machine learns
+
 ### Lab Vertex AI: Prediction Loan Risk with AutoML
 ### Summary
 ### Reading
