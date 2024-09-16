@@ -462,14 +462,113 @@ Learning Objectives
 
 ### Introduction
 In this module on Generative AI, you will explore the exciting opportunities offered by this recent AI innovation. You will learn about GenAI and how it functions, create GenAI projects on Google Cloud, and use Gemini multimodal with Vertex AI Studio. You will also delve into prompt design, model tuning, and explore Model Garden for accessing different GenAI models. Additionally, you will discover how GenAI is integrated into AI solutions like CCAI. The module concludes with a hands-on lab using Vertex AI Studio to create prompts and conversations. By the end, you will have a solid understanding of Generative AI and the tools available for GenAI development. Let's get started!
+
 ### Generative AI and workflow
+Generative AI, also known as gen AI, is a type of artificial intelligence that **generates content for various tasks** such as marketing campaigns, code generation, chatbots, information extraction, and document summarization. It learns from existing content through a process called training, which creates a foundation model. Google has developed several foundation models, including **Gemini** for multimodal processing, **Gemma** for language generation, **Codey** for code generation, and **Imagen** for image processing. These models can be used directly or further trained with new datasets to solve specific problems. Pre-training a foundation model involves training it for general purposes with a large dataset, while fine-tuning involves customizing the model for specific aims with a smaller dataset. Google Cloud provides tools like **Vertex AI Studio** and **Model Garden** to access gen AI models and create gen AI projects.
+<p style="text-align: center;">
+    <img src="./images/vertexai-genai.png" width="800" />
+  <img src="./images/workflow-genai.png" width="800" />
+</p>
+
 ### Gemini multimodal
+Explores the capabilities of Gemini, a powerful foundation model trained by Google. **Gemini is a multimodal model that can process information from various modalities**, such as text, image, and video. It excels in tasks like description and captioning, information extraction, analysis, seeking, content creation, and data conversion. The video explains how developers can engage with Gemini through the **Google Cloud console, SDKs, and APIs**. It introduces the concept of **prompts**, which are natural language requests submitted to the model for a response. The video also demonstrates how to access Gemini within Vertex AI Studio and configure settings for generating responses. Overall, it provides an overview of Gemini's capabilities and practical ways to utilize it.
+<p style="text-align: center;">
+    <img src="./images/genai-cases.png" width="800" />
+  <img src="./images/promt.png" width="800" />
+</p>
+
 ### Promt design
+In this lesson, we explore the art and science of prompt design, which is a fundamental skill for effectively using generative AI. We learn about three methods of **shaping the model's response**: zero-shot prompting, one-shot prompting, and few-shot prompting. Zero-shot prompting involves providing a prompt that describes the task without additional examples. One-shot prompting involves giving a single example of the task, while few-shot prompting involves providing a small number of examples. We also learn about the components of a structured prompt, including the context, examples, and corresponding answers. The lesson provides **best practices for prompt design**, such as being concise, specific, and including examples. We also learn about **adjusting model parameters**, such as temperature, top K, and top P, to control the randomness of responses. Finally, we are reminded to experiment with different prompt structures and parameters to find what works best for our use case.
+<p style="text-align: center;">
+    <img src="./images/temperature.png" width="800" />
+  <img src="./images/top-p.png" width="800" />
+  <img src="./images/top-k.png" width="800" />
+</p>
+
 ### Model tuning
+In this section of the course, we explore the topic of model tuning, which is an advanced technique to enhance the quality of responses from GenAI models. We discuss different types of tuning methods, including **prompt design, parameter efficient tuning, reinforcement tuning, and distillation**. Prompt design allows you to customize the model's responses by providing context and examples. Parameter efficient tuning involves making smaller changes to the model to improve its performance. Reinforcement tuning uses unsupervised reinforcement learning with human feedback. **Distillation** is a more technical technique that enables training smaller task-specific models with less data and lower serving costs. We also learn how to start a tuning job using Vertex AI Studio, where you can choose between supervised tuning and unsupervised tuning. The training data should be structured as a supervised training dataset in a JSONL file. Once the tuning job is complete, you can deploy the tuned model for serving or further testing.
+<p style="text-align: center;">
+  <img src="./images/custom-genai.png" width="800" />
+  <img src="./images/distilling.png" width="800" />
+</p>
+
 ### Model Garden
+In this section of the course, we explore Model Garden with Vertex AI, which offers a wide range of pre-trained AI models developed by Google and third parties. Model Garden serves as a model library where you can search, discover, and interact with these models. **It provides model cards that contain important details about each model**, such as an overview, use cases, and relevant documentation. Model Garden is integrated with Vertex AI Studio, allowing you to initiate project development through a user-friendly interface. It also provides access to sample code and facilitates code development via notebooks.
+
+There are three major **categories of models in Model Garden**: foundation models, task-specific solutions, and fine-tunable or open source models. Foundation models are pre-trained large models that can be customized for specific tasks using Vertex AI Studio, APIs, and SDKs. Task-specific solutions are optimized models for solving specific problems, such as entity analysis, sentiment analysis, and object detection. Fine-tunable models are open source models that can be customized using a custom notebook or pipeline.
+
+To find the right model for your needs, you can use **filters based on modalities (language, vision, speech), tasks (generation, classification, detection), and features (pipeline, notebook, one-click deployment support)**. Model Garden makes it easy to find, deploy, and use models for various AI tasks.
+
 ### AI solutions
+In this lesson, you learned about the role of Gen AI in AI solutions and how it is embedded in various industries. AI solutions can be categorized into **vertical and horizontal solutions**. 
+
+**Contact Center AI (CCAI)** is Google's solution to apply AI in contact centers. It aims to increase customer satisfaction and operational efficiency while requiring minimum AI expertise. CCAI consists of three major components: virtual agent, agent assist, and insights. The **virtual agent** is a large language model-powered bot that can converse naturally with customers and provide 24/7 customer self-service. The **agent assist** is an AI assistant that helps human agents during complex interactions, providing step-by-step help and generating insights. The **insights** component uses natural language processing to analyze conversations and provide valuable information for improving customer service.
+
+The future of AI and machine learning is promising. The transition from data to AI is inevitable, as AI becomes increasingly powerful and capable of extracting insights and possibilities from data. Generative AI will play a crucial role in **producing content and improving productivity, creating new opportunities and offering great potential**. 
+<p style="text-align: center;">
+  <img src="./images/solution-ai.png" width="800" />
+  <img src="./images/cccai.png" width="800" />
+</p>
+
 ### Lab introduction
+In this course on Introduction to AI and Machine Learning on Google Cloud, you will learn about various AI concepts and development options. One of the topics covered is **Vertex AI studio**, where you will get hands-on experience with **analyzing images** using Gemini multimodal. You will explore the **multimodal capabilities** of Vertex AI studio and learn how to **design prompts** in both free form and structured mode. Additionally, you will learn how to **generate conversations** using the capabilities of Vertex AI studio. By the end of the course, you will be able to use the features and capabilities discussed in the course to enhance your AI and machine learning projects. Enjoy exploring and have fun learning!
+
 ### Lab: Vertex AI studio
+
+- Task 1. Analyze images with Gemini Freeform
+- Task 2. Explore freeform capabilities
+- Task 3. Design prompts with free-form and structured mode
+- Task 4. Generate conversations
+
+<p style="text-align: center;">
+  <img src="./images/promt-lab.png" width="800" />
+</p>
+
+
+
 ### Summary
+Sure! In the last module on generative AI, you learned about how generative AI works and the process of training large language models. You also explored the Gen AI workflow on Google Cloud, which includes using tools like Vertex AI Studio and Model Garden. These tools help developers access foundational models, design prompts, and solve business problems using generative AI. Additionally, you learned about vertical and horizontal AI solutions and their embedded generative AI capabilities. The module concluded with a hands-on lab where you used Vertex AI Studio to create prompts and conversations. Overall, the module aimed to provide you with an understanding of generative AI and how to use it in your projects.
+<p style="text-align: center;">
+  <img src="./images/summary.png" width="800" />
+</p>
+
+### Reading
+- [Generative AI on Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview)
+- [Introduction ot promt design](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)
+- [AI and Machine Learning Solutions](https://cloud.google.com/solutions/ai?hl=en)
+- Course:  Natural  Language  Processing  on  Google  Clou
+  - [Coursea](https://www.coursera.org/learn/sequence-models-tensorflow-gcp)
+  - [Google Cloud Skills Boost](https://www.coursera.org/learn/sequence-models-tensorflow-gcp)
+- [Attention is all you need: Transformer paper](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
 
 ## Module 5: Summary
+This module provides a summary of the entire course by covering the most important concepts, tools, technologies, and products.
+Learning Objectives
+Recognize the primary concepts, tools, technologies, and products learned in the course.
+
+This course, "Introduction to AI and Machine Learning on Google Cloud," provides valuable insights to enhance your career in AI and machine learning. The course covers various topics and concepts related to AI development, ML models, ML workflow, and generative AI. Here is a summary of the main concepts covered in each module:
+
+Module 1: AI Foundations
+- Introduction to Google Cloud infrastructure and its three layers: compute and storage, data and AI products.
+- Understanding supervised and unsupervised learning and how to select an ML model.
+- Building ML models using BigQuery and SQL commands.
+
+Module 2: AI Development Options
+- Exploring different options to build an ML model, including pre-trained APIs, Vertex AI, AutoML, and custom training.
+- Hands-on lab using the Natural Language API to analyze sentiment in text.
+
+Module 3: AI Development Workflow
+- Understanding the three stages of the ML workflow: data preparation, model development, and model serving.
+- Building an ML model from end-to-end using Vertex AI and AutoML.
+- Hands-on lab building an ML model to predict loan risk.
+
+Module 4: Generative AI
+- Exploring the development tools and workflow of generative AI on Google Cloud.
+- Using Vertex AI Studio to access foundational models and create prompts and conversations.
+- Understanding vertical and horizontal AI solutions with embedded generative AI capabilities.
+
+Throughout the course, you are encouraged to apply what you've learned to your own work and continue developing your skills as an AI practitioner. For more training and certification options, you can explore the resources available on cloud.google.com/training/machinelearning-ai and cloud.google.com/certifications.
+
+#### Reading
+- [The Google Cloud Trtaining websites](https://cloud.google.com/learn/training?hl=en#learning-paths)
+- [Machine Learning Engineering Path](https://www.cloudskillsboost.google/paths/17)
