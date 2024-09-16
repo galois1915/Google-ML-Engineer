@@ -460,4 +460,16 @@ Learning Objectives
 * Design efficient prompt and tune models with different methods.
 * Recognize the AI solutions and the embedded Gen AI features.
 
+### Introduction
+In this module on Generative AI, you will explore the exciting opportunities offered by this recent AI innovation. You will learn about GenAI and how it functions, create GenAI projects on Google Cloud, and use Gemini multimodal with Vertex AI Studio. You will also delve into prompt design, model tuning, and explore Model Garden for accessing different GenAI models. Additionally, you will discover how GenAI is integrated into AI solutions like CCAI. The module concludes with a hands-on lab using Vertex AI Studio to create prompts and conversations. By the end, you will have a solid understanding of Generative AI and the tools available for GenAI development. Let's get started!
+### Generative AI and workflow
+### Gemini multimodal
+### Promt design
+### Model tuning
+### Model Garden
+### AI solutions
+### Lab introduction
+### Lab: Vertex AI studio
+### Summary
+
 ## Module 5: Summary
