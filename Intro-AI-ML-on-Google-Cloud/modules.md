@@ -280,6 +280,8 @@ AI  development  options:
 -  [Natural  Language  API  basics](https://cloud.google.com/natural-language/docs/basics)
 -  [AI  APIs  for  Google  Cloud](https://cloud.google.com/ai/apis?hl=en)
 -  [Introduction  to  Ve ex  AI](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform) 
+    - [AutoML Beginner's guide](https://cloud.google.com/vertex-ai/docs/beginner/beginners-guide)
+    - [Custom training: beginner guide](https://cloud.google.com/vertex-ai/docs/start/training-guide)
 - [Tf.keras  documentation](https://www.tensorflow.org/api_docs/python/tf/keras)
 
 ## Module 3: AI Development Workflow
@@ -346,14 +348,116 @@ In this section of the course, we will be putting our knowledge into practice wi
 ### How a machine learns
 
 ### Lab Vertex AI: Prediction Loan Risk with AutoML
+Objectives
+You learn how to:
+- Upload a dataset to Vertex AI.
+- Train a machine learning model with AutoML.
+- Evaluate the model performance.
+- Deploy the model to an endpoint.
+- Get predictions.
+
+#### Introduction to Vertex AI
+This lab uses Vertex AI, the unified AI platform on Google Cloud to train and deploy a ML model. Vertex AI offers two options on one platform to build a ML model: a codeless solution with AutoML and a code-based solution with Custom Training using Vertex Workbench. You use AutoML in this lab.
+
+In this lab you build a ML model to determine whether a particular customer will repay a loan.
+
+#### Task 1. Prepare the training data
+There are three options to import data in Vertex AI:
+
+- Upload CSV files from your computer.
+- Select CSV files from Cloud Storage.
+- Select a table or view from BigQuery.
+
+#### Task 2. Train your model
+- Training method
+- Model details
+- Training options
+- Compute and pricing
+
+#### Task 3. Evaluate the model performance (demonstration only)
+Vertex AI provides many metrics to evaluate the model performance. You focus on three:
+
+- Precision/Recall curve
+- Confusion Matrix
+- Feature Importance
+
+#### Task 4. Deploy the model (demonstration only)
+Now that you have a trained model, the next step is to create an endpoint in Vertex. A model resource in Vertex can have multiple endpoints associated with it, and you can split traffic between endpoints.
+- Create and define an endpoint
+- Model settings and monitoring
+
+#### Task 5. SML Bearer Token
+- Retrieve your Bearer Token
+
+To allow the pipeline to authenticate, and **be authorized to call the endpoint to get the predictions**, you will need to provide your Bearer Token.
+
+#### Task 6. Get predictions
+- Open cloud shell windows
+- export **AUTH_TOKEN**="INSERT_SML_BEARER_TOKEN"
+
+gcloud storage cp: Copy data between your local file system and the cloud, within the cloud, and between cloud storage providers.
+- gcloud storage cp gs://spls/cbl455/cbl455.tar.gz .
+- tar -xvf cbl455.tar.gz
+- export **ENDPOINT**="https://sml-api-vertex-kjyo252taq-uc.a.run.app/vertex/predict/tabular_classification"
+- export **INPUT_DATA_FILE**="INPUT-JSON" 
+
+> The smlproxy application is used to communicate with the backend.
+
+The file INPUT-JSON is composed of the following values:
+age	ClientID	income	loan
+40.77	997	44964.01	3944.22
+
+```python
+./smlproxy tabular \
+  -a $AUTH_TOKEN \
+  -e $ENDPOINT \
+  -d $INPUT_DATA_FILE
+```
+Response
+```python
+ SML Tabular HTTP Response:
+  2022/01/10 15:04:45 {"model_class":"0","model_score":0.9999981}
+```
+If you use the Google Cloud console, the following image illustrates how the same action could be performed:
+<p style="text-align: center;">
+  <img src="./images/cloud-prediction.png" width="800" />
+</p>
+
 ### Summary
+In the AI Development Workflow module, you learned about the three main stages of the machine learning workflow: data preparation, model development, and model serving. Here is a summary of what you learned:
+
+1. Data Preparation:
+- In this stage, you uploaded data and applied feature engineering.
+- It is similar to gathering ingredients and prepping them in the kitchen for a meal.
+
+2. Model Development:
+- In this stage, the model was trained and evaluated.
+- You experimented with different recipes and tasted the meal to ensure it turned out as expected.
+
+3. Model Serving:
+- In this final stage, the model was deployed and monitored.
+- It is like serving the meal to customers and adjusting the menu based on their feedback.
+
+You also learned that there are two ways to build a machine learning model: through a user interface or with code. Using pre-built SDKs with Vertex AI pipelines allows you to automate the ML pipeline for continuous integration, training, and delivery.
+
+Next, you will advance to the Generative AI module, which offers exciting opportunities in AI development.
+
 ### Reading
+- [MLOps overview](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
+- [Introduction to Vertex AI pipeline](https://cloud.google.com/vertex-ai/docs/pipelines/introduction)
+    - [Introduction to Vertex AI pipeline lab](https://codelabs.developers.google.com/vertex-pipelines-intro#0)
+    - [Introduction to Vexter AI SDK](https://www.youtube.com/watch?v=VaaUnIFCNX4)
+- [Explainable AI](https://cloud.google.com/explainable-ai)
+- Course: Introduction to Vertex Forescasting and Time Series in Practice
+    - [Coursea](https://www.coursera.org/learn/vertex-forecasting-and-time-series-in-practice)
+    - [Google Cloud Skill boost](https://www.cloudskillsboost.google/course_templates/511)
 
 ## Module 4: Generative AI
 This module introduces generative AI (gen AI), the newest advancement in AI, and the essential toolkits for developing gen AI projects. It starts by examining the gen AI workflow on Google Cloud. It then investigates how to use Gen AI Studio and Model Garden to access Gemini multimodal, design prompt, and tune models. Finally, it explores the built-in gen AI capabilities of AI solutions.
 Learning Objectives
-Define generative AI and foundation models.
-Use Gemini multimodal with Vertex AI Studio.
-Design efficient prompt and tune models with different methods.
-Recognize the AI solutions and the embedded Gen AI features.
+* Define generative AI and foundation models.
+* Use Gemini multimodal with Vertex AI Studio.
+* Design efficient prompt and tune models with different methods.
+* Recognize the AI solutions and the embedded Gen AI features.
+
 ## Module 5: Summary
