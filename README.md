@@ -8,8 +8,7 @@
 This course, "Introduction to AI and Machine Learning on Google Cloud," provides a comprehensive overview of AI technologies and **tools offered by Google**. The course is organized into different layers, starting with the AI foundation layer where you learn about **cloud essentials and data tools**. Then, you explore different options to build machine learning projects in the AI development layer, including **out-of-the-box solutions, low code or no code options, and do-it-yourself** approaches. You also learn how to train and serve machine learning models using **Vertex AI**, Google Cloud's AI development platform. Finally, you are introduced to **generative AI** and how it empowers AI development and solutions. By the end of the course, you will be able to recognize the data to AI technologies and tools offered by Google Cloud, leverage generative AI capabilities, choose between different options to develop an AI project on Google Cloud, and build machine learning models end-to-end using Vertex AI.
 
 <p style="text-align: center;">
-  <img src="./Intro-AI-ML-on-Google-Cloud/Coursera TER20BHO73QV-1
-.png" width="800" />
+  <img src="./Intro-AI-ML-on-Google-Cloud/Coursera TER20BHO73QV-1.png" width="800" />
 </p>
 
 ## Launching into Machine Learning
