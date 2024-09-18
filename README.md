@@ -14,6 +14,8 @@ This course, "Introduction to AI and Machine Learning on Google Cloud," provides
 ## Launching into Machine Learning
 This course, "Launching into Machine Learning," provides foundational knowledge in machine learning. Throughout the course, you will learn about improving **data quality, performing exploratory data analysis, building and training ML models using Vertex AI, AutoML and BigQuery ML, optimizing and evaluating models using loss functions and performance metrics, and creating repeatable and scalable training, evaluation, and test datasets**. The course is designed to help you understand the terminology used in machine learning and develop practical skills in applying ML techniques.
 
+> TensorFlow - BigQuery - Machine Learning - Data Cleansing
+
 ## TensorFlow on Google Cloud
 "TensorFlow on Google Cloud" is a course that teaches you how to design and build machine learning models using **TensorFlow 2.x and Keras**. You will learn about the key components of TensorFlow, manipulate data using the **tf.data** library, create models using the **Keras API**, and train and deploy models at **scale with Vertex AI**. By the end of the course, you will have the skills to build and improve machine learning models using TensorFlow on the Google Cloud platform.
 
