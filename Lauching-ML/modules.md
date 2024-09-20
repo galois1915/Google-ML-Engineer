@@ -146,6 +146,13 @@ Differentiate between supervised and unsupervised learning
 Perform linear regression using Scikit-Learn.
 Differentiate between regression and classification problems.
 
+### Supervised Learning
+### Linear regrerssion
+### Lab Intor: Introduction to Linear Regression
+### Lab demo: Intro to Linear Regression
+### Lab: Introductionto linear regression
+### Logistic regression
+### Reading
 
 ## Module 4: Trainig AutoML Models using Vertex AI
 In this module, we will introduce training AutoML Models using Vertex AI.
@@ -394,10 +401,192 @@ To summarize, building a recommendation system with BigQuery ML involves three s
 ## Module 6: Optimization
 In this module we will walk you through how to optimize your ML models.
 Learning Objectives
-Discuss how to measure model performance objectively using loss functions.
-Explain loss functions as the basis for an algorithm called gradient descent.
-Explain how to optimize gradient descent to be as efficient as possible.
-Identify performance metrics to make business decisions.
+- Discuss how to measure model performance objectively using loss functions.
+- Explain loss functions as the basis for an algorithm called gradient descent.
+- Explain how to optimize gradient descent to be as efficient as possible.
+- Identify performance metrics to make business decisions.
+
+### Introduction
+In this module, you will learn about optimizing machine learning models. The key topics covered include:
+1. Objective Measurement of Model Performance: You will learn how to measure model performance objectively using loss functions. Loss functions help quantify the error between predicted and actual values, allowing you to evaluate the effectiveness of your model.
+2. Gradient Descent Algorithm: Loss functions serve as the basis for an algorithm called gradient descent. Gradient descent is an optimization algorithm that adjusts the model's parameters to minimize the loss function. You will learn how to use gradient descent to improve the performance of your models.
+3. Efficient Optimization: You will explore techniques to optimize gradient descent and make it as efficient as possible. This includes strategies such as batch gradient descent, stochastic gradient descent, and mini-batch gradient descent.
+4. Using Performance Metrics for Decision Making: Finally, you will learn how to use performance metrics to make informed business decisions. Performance metrics provide insights into the effectiveness of your models and help guide decision-making processes.
+
+By understanding these concepts and techniques, you will be able to optimize your machine learning models and make data-driven decisions.
+
+### Defining ML Models
+This module focuses on the concept of ML models and how they are used in machine learning. Here are the key points covered in this module:
+
+1. **ML models are mathematical functions with parameters and hyperparameters**. Parameters are variables that change during model training, while hyperparameters are settings that are set before training and remain fixed.
+
+2. **Linear models** are one of the first types of ML models and are still widely used today. They represent the relationship between independent variables (features) and the dependent variable (label) as a line in 2D space.
+
+3. The formula used to model the relationship in a linear model is **y = mx + b**, where m represents the change in the label in response to a small change in the feature.
+
+4. Linear models can be used for both **regression and classification tasks**. For regression, the formula B + M * X is used to make predictions. For classification, the sign of the output is used to determine class membership.
+
+5. The decision boundary in a linear model separates the points above the line from the points below the line. It is intended to be predictive of unseen data, a property known as **generalization**.
+
+6. Increasing the dimensionality of the inputs and outputs in a linear model results in a hyperplane, which is the n-dimensional generalization of a line.
+
+In the next module, we will delve deeper into the concept of generalization in machine learning.
+
+### Introducing the course dataset
+This section of the course focuses on predicting the **health of babies** before they are born using machine learning. It discusses the features and labels that can be used in the model, such as mother's age and baby weight. The importance of exploring and analyzing the data before building the model is emphasized, and **scatterplots and quantile plots** are used to visualize the relationship between mother's age and baby weight. The concept of underfitting is introduced, highlighting the need for more complex models to capture non-linear relationships. The process of determining the best weights for linear models is explained, with **gradient descent being used for optimization**. The section concludes by introducing the concept of **loss functions** for evaluating the quality of predictions.
+
+### Introduction to Loss Functions
+In this section, we learn about loss functions and their importance in evaluating the quality of predictions made by machine learning models. We start by understanding the concept of error, which is the difference between the predicted value and the actual value. We explore different ways to compose error values, such as using the sum or the absolute values of the errors. However, these methods have limitations.
+
+We then introduce the **Mean Squared Error (MSE)** as a commonly used loss function. MSE takes the squared error values, averages them, and provides a measure of the model's performance. However, interpreting MSE can be challenging due to the squared units.
+
+To address this, we introduce the **Root Mean Squared Error (RMSE)**, which is the square root of MSE. RMSE provides a more interpretable measure of the model's performance, where a higher RMSE indicates worse predictions.
+
+Next, we discuss the limitations of using RMSE as a loss function for **classification problems**. In classification, the label is a categorical variable, and RMSE fails to capture the intuition that bad predictions should be penalized more strongly. To overcome this, we introduce the **cross entropy or log loss** as a commonly used loss function for classification. Cross entropy penalizes bad predictions more strongly, aligning with our intuition.
+
+<p style="text-align: center;">
+  <img src="./images/loss-functions.png" width="800" />
+</p>
+
+### Gradient Descent
+In this section on optimization, we learn about the concept of gradient descent, which is a search strategy used to find the minimum of a loss function. We start by understanding that optimization is like searching in parameter space using the loss function as a guide. However, we only have limited information about the loss values at the points we have evaluated. 
+
+To find the minimum, we need to answer two important questions: **which direction should we head, and how far should we step?** For now, we simplify the process by using a fixed-size step. We compute the direction and update each parameter in the model by adding the product of the step size and the direction. We then recompute the loss.
+
+The algorithm takes fixed-size steps in the direction of the minimum. If the step size is too small, the training might take a long time. If it's too big, we might bounce from wall to wall or even end up in a different part of the loss surface. **The step size needs to be just right for each problem**.
+
+Thankfully, the slope of the curve gives us an idea of how far to step and in which direction. A larger slope indicates that we are farther away from the bottom, and a negative slope means the bottom is to the right. We can use this information to update our algorithm and take steps in the right direction with the appropriate step size.
+
+However, it's important to note that the basic algorithm of gradient descent may not always perform well in practice. It can take a long time to find sub-optimal minima or may not finish at all. This doesn't mean the algorithm doesn't work, but rather that it may not excel in certain problem scenarios.
+
+<p style="text-align: center;">
+  <img src="./images/gradient-search.png" width="800" />
+  <img src="./images/gradient-step.png" width="800" />
+  <img src="./images/gradient.png" width="800" />
+</p>
+
+### Troubleshooting loss curves
+This section of the course focuses on troubleshooting loss curves in machine learning. It discusses the **common shapes of loss curves** and what they indicate about the model's progress. It introduces the concept of a **learning rate**, which is a scaling parameter that affects the step size in gradient descent. The learning rate is a hyperparameter that needs to be set before training begins. The section also mentions hyperparameter tuning as a method to determine the best value for the learning rate. Overall, this section emphasizes the importance of understanding loss curves and choosing an appropriate learning rate for effective model training.
+
+<p style="text-align: center;">
+  <img src="./images/loss-curve.png" width="800" />
+  <img src="./images/troubleshooting-loss.png" width="800" />
+</p>
+
+### ML Model pilfalls
+INTRODUCTION: In machine learning, re-running model code may not always produce the same output due to non-deterministic settings. This is because the loss surfaces in ML models can vary, with some having multiple minima.
+
+CONVEXITY: Loss surfaces can be convex or non-convex. Convex surfaces have a single bottom, while non-convex surfaces have multiple minima. Multiple minima mean there are equivalent points in parameter space that produce models with similar predictive capacity.
+
+TRAINING TIME OPTIMIZATION: To make model training faster, we can adjust two factors: **the number of data points used for derivative calculation and the frequency of checking the loss.**
+
+MINI-BATCH GRADIENT DESCENT: By using mini-batches, we can reduce the number of data points fed into the loss function at each iteration. This technique balances out the samples and is known as mini-batch gradient descent. It also saves time, memory, and can be easily parallelized.
+
+BATCH SIZE: The size of mini-batches, also known as batch size, is an important hyperparameter. It can vary between 10 and 1,000 examples, depending on the problem and can be found using hyperparameter tuning.
+
+REDUCING LOSS FUNCTION EVALUATION: Checking the loss function at every pass is time-consuming. By reducing the frequency of loss function evaluation, we can speed up training. Strategies like time-based or step-based evaluation can be used.
+
+DECOPULING MODEL PARAMETER CHANGES AND LOSS CHECKING: With mini-batch gradient descent and reduced loss function evaluation frequency, we decouple the two fundamental parts of model training: changing model parameters and checking for the right changes.
+
+By optimizing these factors, we can improve the training time of machine learning models without compromising accuracy.
+
+<p style="text-align: center;">
+  <img src="./images/convexity.png" width="800" />
+  <img src="./images/time-long.png" width="800" />
+  <img src="./images/bach.png" width="800" />
+</p>
+
+### Lecture Lab: Introduction trhe TensorFlow Playground
+This section of the course introduces the TensorFlow Playground tool, which is a powerful tool for visualizing how neural networks work. It explains that even though neural networks haven't been introduced yet, the simplest neural networks are mathematically equivalent to linear models, making the tool suitable for experimenting and verifying theoretical concepts. The interface of the tool is described, including the features column, hidden layers column, and output column. The top control bar and data column are also explained. The section then guides learners through training a linear model to classify data and demonstrates the impact of different learning rates on the model's performance. The results of the experiments are discussed, highlighting the relationship between learning rate, weight magnitude, and loss curve steepness. Overall, this section provides hands-on experience with the TensorFlow Playground tool and reinforces the concepts learned in the course.
+
+<p style="text-align: center;">
+  <img src="./images/playground.png" width="800" />
+</p>
+
+### Lecture Lab
+### Lecture Lab
+### Performance metrics
+In this section of the course, we explore the problems that can arise when training models using gradient descent. We learn about inappropriate minima, which are points in parameter space that reflect strategies that won't generalize well or don't reflect the true relationship being modeled. We also discuss the limitations of loss functions and the need for performance metrics to evaluate models after training. **Performance metrics are easier to understand and directly connected to business goals**. We review three performance metrics: confusion matrices, precision, and recall, and discuss when to use them.
+
+### Confusion matrix
+
+This section of the course focuses on optimization in machine learning. Here are the key points covered:
+
+1. ML Models and Optimization: ML models are sets of parameters and hyperparameters that need to be optimized. Optimization is framed as a search in parameter space.
+
+2. Loss Functions: Loss functions quantify and evaluate the performance of a model during training. Two examples of loss functions discussed are RMSE for linear regression and cross-entropy for classification tasks.
+
+3. Gradient Descent: Gradient descent is a process used to traverse loss surfaces efficiently. It involves analyzing the slopes of loss functions to determine the direction and step magnitude.
+
+4. Experimenting with ML Models: TensorFlow Playground was used to experiment with different ML models. It was observed that linear models can learn non-linear relationships with non-linear features, and neural networks can learn hierarchies of features.
+
+5. Hyperparameters: Hyperparameters like learning rate and batch size affect gradient descent. Choosing the right hyperparameters is crucial for model optimization.
+
+6. Model Performance Metrics: Accuracy, precision, and recall are metrics used to evaluate classification model performance. The choice of metric depends on the problem being solved.
+
+7. Labeled Training Dataset: The labeled training dataset is essential for the model to learn from. It serves as the driving force behind model optimization.
+
+In the next module, the course will cover how to effectively split the full dataset into training and evaluation sets and the pitfalls to avoid in the process.
+
+<p style="text-align: center;">
+  <img src="./images/matrix.png" width="800" />
+  <img src="./images/overview.png" width="800" />
+</p>
+
+### Reading
+- [Introduction to lineal regression](https://genomicsclass.github.io/book/pages/intro_using_regression.html)
+- [Linear models](https://www.sciencedirect.com/topics/mathematics/linear-models)
+- [How to chosse a machine learning model](https://www.datasciencecentral.com/profiles/blogs/how-to-choose-a-machine-learning-model-some-guidelines) 
+- [How to choose a loss functions when training a DL NN](https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/)
+- [4 common pillfas in putting a machine learining model in production](https://www.topbots.com/pitfalls-in-putting-ml-model-in-production/)
+- [Performance metrics](https://www.sciencedirect.com/topics/computer-science/performance-metric)
+- [Understanding confusion metric](https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62)
+
+
 ## Module 7: Generalization and sampling
+Now it’s time to answer a rather weird question: when is the most accurate ML model not the right one to pick? As we hinted at in the last module on Optimization -- simply because a model has a loss metric of 0 for your training dataset does not mean it will perform well on new data in the real world. You will learn how to create repeatable training, evaluation, and test datasets and establish performance benchmarks.
+Learning Objectives
+Identify ways to assess if your model is overfitting.
+Gauge when to stop model training
+Explain how to create repeatable training, evaluation, and test datasets.
+Establish performance benchmarks.
+
+### Introduction
+In this module on generalization and sampling, we explore the concept of model performance beyond just the training dataset. We learn that the most accurate ML model may not necessarily be the best choice for real-world applications. The main concern is how well the model performs on unseen data. To evaluate model performance, we need to create a separate evaluation dataset that the model has not seen during training. We also learn about overfitting and how to determine when to stop model training. Additionally, we discover how to create repeatable training, evaluation, and test datasets to establish performance benchmarks.
+
+### Generalization and ML models
+
+We then discuss the issue of overfitting, where a more complex model with more parameters can memorize the training dataset but fail to generalize well to new data. To assess the quality of a model, we need to evaluate its performance on a new dataset that it hasn't seen before. We split the original dataset into training and validation datasets and compare the model's performance on both. If the model's performance starts to degrade on the validation dataset, it indicates overfitting, and we should stop training.
+
+We also learn about underfitting, where a model is too simplistic and fails to capture the relationships in the data. Finding the right level of model complexity is crucial for achieving good generalization. We use the validation dataset to determine if the model parameters are leading to overfitting and adjust the complexity accordingly.
+
+<p style="text-align: center;">
+  <img src="./images/generalization.png" width="800" />
+</p>
+
+### When to stop model training
+In this section of the course, we learn about the importance of using a validation dataset to fine-tune the hyperparameters of a machine learning model. We start by understanding how the **validation dataset** is used after the model training process. We use the validation dataset to assess the performance of our model against data it has not seen during training. If there is no significant difference between the loss metrics from the training run and the loss metric for the validation dataset, we can continue to optimize and tune the model. We can adjust the hyperparameters and try another training run to improve the model's performance. We also learn that we can use a similar process to figure out model parameters, such as the number of layers or nodes in a neural network. 
+
+Once the model training and validation are complete, we need to evaluate the model's performance on a completely independent **test dataset**. This test dataset is used to report the final loss metric to our boss and determine whether to use the model. If the model fails to perform well on the test dataset, we need to either create and train a new model or collect more data samples for the original dataset. It is better for the model to fail in the final test than after it has been put into production.
+
+To make the most of our data, we can use a technique called **bootstrapping or cross-validation**. This involves splitting the data into training and validation sets multiple times, training the model, and computing the validation loss metric each time. By averaging all the validation loss metrics and calculating the standard deviation, we can get a better understanding of the model's performance. This approach allows us to use all the data but requires training the model multiple times.
+
+In summary, if we have a large amount of data, it is recommended to have a completely independent test dataset. However, if we have limited data, we can use cross-validation to make the most of the available data.
+
+<p style="text-align: center;">
+  <img src="./images/validation.png" width="800" />
+  <img src="./images/test-data.png" width="800" />
+</p>
+
+### Creating repeatable samples in BigQuery
+In this section of the course, we learn about the importance of splitting our dataset for testing our machine learning models. We explore different methods for dividing the dataset and ensuring that the split is repeatable. One approach is to use a **hash function**, such as **Farm fingerprints**, to generate a unique value for each data point. This allows us to consistently assign data to different buckets, such as training, validation, and testing. We also discuss the considerations for choosing the field to split the dataset on, such as date or airport name. Additionally, we learn about the benefits of working with a smaller subset of data during the model development phase, as it allows for quicker iteration and debugging. Finally, we explore how to uniformly sample a smaller subset of the dataset using modulo operations.
+
+### Demo
+
+### Reading
+
 ## Module 8: Summary
+This module is a summary of the Launching into Machine Learning course
+Learning Objectives
+Describe the key takeaways from course's modules
 
