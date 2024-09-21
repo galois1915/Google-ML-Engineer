@@ -613,6 +613,8 @@ WHERE
 ```
 
 ### Reading
+- [When to stop training your neural network](https://medium.com/@pranoyradhakrishnan/when-to-stop-training-your-neural-network-174ff0a6dea5)
+- [Generalization, Regularization, Overfitting, Bias and variance in machine learning](https://towardsdatascience.com/generalization-regularization-overfitting-bias-and-variance-in-machine-learning-aa942886b870)
 
 ## Module 8: Summary
 This module is a summary of the Launching into Machine Learning course
