@@ -581,7 +581,36 @@ In summary, if we have a large amount of data, it is recommended to have a compl
 ### Creating repeatable samples in BigQuery
 In this section of the course, we learn about the importance of splitting our dataset for testing our machine learning models. We explore different methods for dividing the dataset and ensuring that the split is repeatable. One approach is to use a **hash function**, such as **Farm fingerprints**, to generate a unique value for each data point. This allows us to consistently assign data to different buckets, such as training, validation, and testing. We also discuss the considerations for choosing the field to split the dataset on, such as date or airport name. Additionally, we learn about the benefits of working with a smaller subset of data during the model development phase, as it allows for quicker iteration and debugging. Finally, we explore how to uniformly sample a smaller subset of the dataset using modulo operations.
 
-### Demo
+### Demo: Splitting datasets in BigQuery
+In this section of the course, we learn about how to split datasets into buckets using SQL in Google BigQuery. The goal is to make the dataset smaller in a repeatable fashion, rather than using naive random sampling. We start by filtering the dataset to include only 1-2% of the total records using modulo operators. Then, we further split the dataset into training, validation, and testing sets. The training set consists of 70% of the filtered data, while the validation set is 50% of the training set. Finally, we reserve 25% of the training set for testing. The process involves using hash functions and filtering operations in SQL. It's important to have a well-distributed dataset to avoid issues with identical hashes. The lecture provides code examples and explains the steps in detail.
+```sql
+SELECT
+  date,
+  ABS(FARM_FINGERPRINT(date)) AS date_hash,
+  MOD(ABS(FARM_FINGERPRINT(date), 70)) AS remainder_divide_by_70,
+  MOD(ABS(FARM_FINGERPRINT(date), 700)) AS remainder_divide_by_700,
+  airline,
+  departure_airport,
+  departure_schedule,
+  arrival_airport,
+  arrival_delay
+FROM
+  `bigquery-samples.airline_ontime_data.flights` #70 588 485 rows
+WHERE
+  --# Pick 1 in 70 rows (where hash / 70 leaves no remainder) 
+  MOD(ABS(FARM_FINGERPRINT(date)),70) = 0 # 842,634 rows (~1.19% of total 70M rows)
+
+  --# Now lets ignore 50% of that new subset
+  --# 350/700 = 50% so anything between 0 and 350 is ignored and 351 - 700 is kept (50%)
+  AND
+  MOD(ABS(FARM_FINGERPRINT(date)),700) >= 350 # 367,710 rows (~43.6% of 842k subset)
+
+  --# And further split that new subset to only include 350 - 524 (midpoint to 700)
+  --# Midpoint: ((700-350)/2)+350 = 525
+  AND
+  MOD(ABS(FARM_FINGERPRINT(date)),700) <= 525 # 211,702 rows (~57.5% of 367k subset or 25.1% of 842k)
+
+```
 
 ### Reading
 
