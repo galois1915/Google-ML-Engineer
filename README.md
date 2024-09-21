@@ -10,14 +10,28 @@ This course, "Introduction to AI and Machine Learning on Google Cloud," provides
 <p style="text-align: center;">
   <img src="./Intro-AI-ML-on-Google-Cloud/Coursera TER20BHO73QV-1.png" width="800" />
 </p>
+Coursera 8BEVRID92B5E-1
 
 ## Launching into Machine Learning
 This course, "Launching into Machine Learning," provides foundational knowledge in machine learning. Throughout the course, you will learn about improving **data quality, performing exploratory data analysis, building and training ML models using Vertex AI, AutoML and BigQuery ML, optimizing and evaluating models using loss functions and performance metrics, and creating repeatable and scalable training, evaluation, and test datasets**. The course is designed to help you understand the terminology used in machine learning and develop practical skills in applying ML techniques.
 
 > TensorFlow - BigQuery - Machine Learning - Data Cleansing
 
+<p style="text-align: center;">
+  <img src="./Lauching-ML/Coursera 8BEVRID92B5E-1.png" width="800" />
+</p>
+
+
 ## TensorFlow on Google Cloud
 "TensorFlow on Google Cloud" is a course that teaches you how to design and build machine learning models using **TensorFlow 2.x and Keras**. You will learn about the key components of TensorFlow, manipulate data using the **tf.data** library, create models using the **Keras API**, and train and deploy models at **scale with Vertex AI**. By the end of the course, you will have the skills to build and improve machine learning models using TensorFlow on the Google Cloud platform.
+>Tensorflow - Python Programming - Machine Learning - keras - Build Input Data Pipeline
+
+### Introduction to the course
+### Introduction to the TensorFlow Ecosystem
+### Design and Build an Input Data Pipeline
+### Building NN with TensorFlow and Keras API
+### Training at scale with Vertex AI
+### Summary
 
 ## Feature Engineering
 This course, "Feature Engineering," is part of the Machine Learning on Google Cloud series. It focuses on improving the accuracy of machine learning models through feature engineering. The course covers various topics, including the use of **Vertex AI Feature Store**, moving from raw data to features, feature engineering using **BigQuery ML**, and Keras, preprocessing features using **Apache Beam and Cloud Dataflow**, and the use cases for **tf.Transform**. By the end of the course, learners will have a solid understanding of feature engineering techniques and how to apply them to enhance their machine learning models.
